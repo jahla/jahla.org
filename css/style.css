@@ -5810,17 +5810,8 @@ nav#main-large ul {
       color: white;
       text-decoration: none; }
 
-nav#contact ul,
 ul.posts {
   list-style: none; }
-
-nav#contact ul {
-  margin-top: 2em;
-  margin-left: -3em; }
-
-nav#contact li {
-  padding: 1em 0;
-  line-height: 1em; }
 
 div.page-nav-top {
   margin-bottom: 2em; }
@@ -5828,16 +5819,27 @@ div.page-nav-top {
 div.page-nav-bottom {
   margin-top: 2em; }
 
+nav#contact {
+  margin: 2em 0 3em 0; }
+  nav#contact ul {
+    list-style: none;
+    text-align: center; }
+    nav#contact ul li {
+      font-size: 1.5em;
+      display: inline;
+      margin-right: 1.5em; }
+    nav#contact ul a:hover span.contact,
+    nav#contact ul a:focus span.contact {
+      text-decoration: none; }
+
 /*
 ----------------------------------
   Icons
   
 */
 span.contact {
-  font-size: 1.5em;
-  padding-right: 1em;
-  margin-top: -0.16em;
-  float: left; }
+  font-size: 1.5;
+  padding-right: 0.25em; }
 
 /*
 ----------------------------------
@@ -5900,12 +5902,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Cardo", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }
 
 div#content p, div#content ul, div#content ol, div#content dl {
-  margin-right: 1em;
   margin-bottom: 0.6em; }
 div#content p + p {
   text-indent: 1em; }
+div#content dt {
+  margin-bottom: 0.6em; }
+div#content dd {
+  margin: 0 1em 0 2em; }
 div#content div.highlight {
   margin: 1.6em 0; }
+
+kbd {
+  padding: 1px 2px;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  border-radius: 2px; }
 
 span.post-date {
   display: block;
@@ -5926,3 +5937,14 @@ p.hero:first-letter {
   font-weight: 400;
   float: left;
   margin: -0.08em 0.08em 0 -0.08em; }
+
+div.recent-posts ul.posts {
+  margin: 0;
+  padding: 0; }
+  div.recent-posts ul.posts li a {
+    padding-left: 0.5em; }
+  div.recent-posts ul.posts li span.date {
+    display: inline-block;
+    width: 8em;
+    text-align: right;
+    padding-right: 0.5em; }

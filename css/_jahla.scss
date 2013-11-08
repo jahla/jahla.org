@@ -82,22 +82,9 @@ nav#main-large ul
 		  }
 	}
 
-nav#contact ul,
 ul.posts
   {
 	list-style: none;
-  }
-
-nav#contact ul
-  {
-  margin-top: 2em;
-  margin-left: -3em;
-  }
-
-nav#contact li 
-  {
-  padding: 1em 0;
-  line-height: 1em;
   }
 
 div.page-nav-top
@@ -110,6 +97,27 @@ div.page-nav-bottom
 	margin-top: 2em;
   }
 
+nav#contact
+  {
+  margin: 2em 0 3em 0;
+    ul
+      {
+      list-style: none;
+      text-align: center;  
+        li
+          {
+          font-size: 1.5em;
+          display: inline;
+          margin-right: 1.5em;
+          }
+          a:hover span.contact,
+          a:focus span.contact
+            {
+            text-decoration: none;
+            }
+      }
+  }
+
 
 /*
 ----------------------------------
@@ -119,10 +127,8 @@ div.page-nav-bottom
 
 span.contact
   {
-  font-size: 1.5em;
-  padding-right: 1em;
-  margin-top: -0.16em;
-  float: left;
+  font-size: 1.5;
+  padding-right: 0.25em;
   }
 
 
@@ -228,17 +234,32 @@ div#content
   {
 	p, ul, ol, dl
 	  {
-		margin-right: 1em;
 		margin-bottom: 0.6em;
     }
 	p + p
 	  {
 		text-indent: 1em;
     }
+  dt
+    {
+    margin-bottom: 0.6em;
+    }
+  dd
+    {
+    margin: 0 1em 0 2em;
+    }
 	div.highlight
 	  {
 		margin: 1.6em 0;
     }
+  }
+
+kbd
+  {
+  padding: 1px 2px;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  border-radius: 2px;
   }
 
 span.post-date
@@ -267,4 +288,27 @@ p.hero:first-letter
   font-weight: 400;
   float: left;
   margin: -0.08em 0.08em 0 -0.08em;
+  }
+
+div.recent-posts
+  {
+  ul.posts
+    {
+    margin: 0;
+    padding: 0;
+      li
+        {
+        a
+          {
+          padding-left: 0.5em;
+          }
+        span.date
+          {
+          display: inline-block;
+          width: 8em;
+          text-align: right;
+          padding-right: 0.5em;
+          }
+        }   
+    }
   }

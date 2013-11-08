@@ -9,7 +9,7 @@ _Sometimes iTunes can be frustrating, especially if you have large amounts of mu
 
 You are in the middle of something, headphones on — when the music changes. Perhaps its an alphabetically adjacent album, or you were using shuffle, or this track has the most irritating breakdown you have ever heard. Your hard won, jealously defended moment of serene concentration is broken. 
 
-I have collected a lot of music over the years, much of which I have forgotten or moved on from. I suspect the same is true for many other music lovers, DJs and garden variety data whores out there. But I don't let iTunes organise my files for me, and so sorting and deleting manually can get arduous. I don't want to have to stop, go to iTunes, skip through the offending song to check it doesn't get better, ctrl+click Show in Finder, cmd+del, cmd-tab iTunes, ctrl+click Show in Playlist> Music, delete from iTunes library…
+I have collected a lot of music over the years, much of which I have forgotten or moved on from. I suspect the same is true for many other music lovers, DJs and garden variety data whores out there. But I don't let iTunes organise my files for me, and so sorting and deleting manually can get arduous. I don't want to have to stop, go to iTunes, skip through the offending song to check it doesn't get better, <kbd>ctrl</kbd> + click → *Show in Finder*, <kbd>cmd</kbd> + <kbd>del</kbd>, <kbd>cmd</kbd> + <kbd>tab</kbd> iTunes, <kbd>ctrl</kbd> + click → *Show in Playlist*, find the music, and delete it from iTunes library…
 
 _A global hotkey that does all this, with minimal disruption to workflow._
 
@@ -21,8 +21,10 @@ I didn't want to have to put ugly shortcuts in my global scripts menu or switch 
 
 <dl>
 <dt>Kill current track</dt>
-<dd>Deletes current iTunes track from iTunes, file to trash. Plays next. *Use carefully, no confirmation dialogue*</dd>
-<dd>**Important edit** As of iTunes 11.1, this script no longer starts playing the next track in the playlist but takes you back to the first one. I will post the fixed version asap. 
+<dd><p>Deletes current iTunes track from iTunes, file to trash. Plays next. *Use carefully; no confirmation dialogue*</p>
+<p>**Important edit** as of iTunes 11.1, this script no longer starts playing the next track in the playlist but takes you back to the first one. I will post the fixed version asap.</p></dd>
+
+
 {% highlight applescript %}
 global addenda
 tell application "iTunes"
@@ -60,8 +62,10 @@ to delete_the_file(floc)
 	end try
 end delete_the_file
 {% endhighlight %}
+
 <dt>Playback position</dt>
 <dd>Applescript to skip forwards and backwards in currently playing iTunes track. In this example, the script tells iTunes to skip back 20 seconds</dd>
+
 {% highlight applescript %}
 tell application "iTunes"
 	if player state is stopped then return
