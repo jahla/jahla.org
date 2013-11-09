@@ -1,11 +1,19 @@
 /*
 ----------------------------------
-  Variables
+  Variables and fonts
 
   Custom variables follow, along with edits from _variables.scss  
 */
 
-$font-family-serif: "Cardo", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+$font-family-sans-serif: "PT Sans", "Open Sans", Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+$font-family-serif: "Vollkorn", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+
+@font-face
+  {
+  font-family: 'Pecita';
+  src: url(../font/Pecita.otf) format('opentype');
+  font-style: normal;
+  }
 
 
 /*
@@ -17,12 +25,13 @@ $font-family-serif: "Cardo", "Palatino Linotype", Palatino, Palladio, "URW Palla
 body
   {
 	line-height: 1.6;
+	font-family: $font-family-sans-serif;
   }
 
 div#container
   {
   @include make-row();
-  margin: 0 auto;
+  margin: 3.5em auto 2em auto;
   text-align: center;
   }
 
@@ -32,8 +41,9 @@ header,
 div#content,
 footer
   {
+  font-size: 1.214em;
   margin: 0 auto;
-	padding-top: 4em;
+	padding-top: 2em;
 	text-align: left;
 	@include make-md-column(8);
 	@include make-md-column-offset(2);
@@ -41,6 +51,7 @@ footer
 
 footer
   {
+  margin-top: 3em;
 	margin-bottom: 4em;
   }
 
@@ -51,15 +62,44 @@ footer
   
 */
 
-nav#main ul,
-nav#main-large ul
+nav#main.page ul
+  {
+  text-align: right;
+  display: block;
+  float: right;
+  margin-bottom: 0;
+  @media screen and (max-width: $screen-xs-max)
+    {
+    text-align: center;
+    float: none;
+    margin-bottom: 1em;
+    display: inline-block;
+    }
+    li:last-child
+	    {
+		  display: inline;
+		  padding-right: 0;
+		  }
+  }
+
+nav#main ul
   {
 	list-style: none;
 	text-align: center;
-	  li
+	padding: 0;
+	margin: 0 0 0 3.4em;
+	@media screen and (max-width: $screen-xs)
+	  {
+  	 margin: 0 0 0 1.8em;
+	  }
+    li
 	    {
 		  display: inline;
 		  padding-right: 3em;
+      @media screen and (max-width: $screen-xs)
+        {
+        padding-right: 1em;
+        }
 		  a
 		    {
 		    font-family: $font-family-serif;
@@ -107,16 +147,39 @@ nav#contact
         li
           {
           font-size: 1.5em;
-          display: inline;
-          margin-right: 1.5em;
+          display: inline-block;
+          margin: 0.5em;
+          padding-right: 1em;
           }
           a:hover span.contact,
           a:focus span.contact
             {
             text-decoration: none;
             }
+        li.github span.icon-github
+          {
+          font-size: 0.9em;
+          }
+        li.twitter span.icon-twitter-sign
+          {
+          font-size: 0.8em;
+          }
+        li.email span.icon-envelope
+          {
+          font-size: 0.75em;
+          }
       }
   }
+
+
+/*
+----------------------------------
+  Footer
+  
+  Possibly remove bootstrap pull-left/right and add responsive styling?
+
+*/
+
 
 
 /*
@@ -163,66 +226,96 @@ h1#site-title
       {
       text-decoration: none;
       }
-	text-align: center;
+    text-align: center;
 	  a span
 	    {
       display: block;
       }
     a span.the,
+      {
+      font-family: 'PT Sans';
+      text-transform: uppercase;
+      line-height: 1em;
+      display: inline;
+      padding-bottom: 1em;
+      }
     a span.of
       {
-      font-family: 'Open Sans';
-      text-transform: uppercase; 
-      }
-    a span.the
-      {
-      line-height: 1em;
-      padding: 0 0.8em;
-      display: inline;
-      background-color: white;
+      font-style: italic;
+      padding-top: 0.5em;
+      margin-left: -0.117em; /* 2px */
       }
     a span.oc
       {
-      padding: 1em 0;
-      font-weight: 700;
-      font-size: 1.6em;
-      border-top: 1px solid $grayCharcoal;
-      margin-top: -0.4em;
+      font-size: 1em;
+      line-height: 1.4;
       }
     a span.jmg
-      {     
-      padding-top: 1em;
+      {
+      padding-top: 0.5em;
+      padding-left: 0.416em; /* 15px */
       }
   }
-header#small h1#site-title
+header.home h1#site-title
   {
-    a span
-      {
-      font-size: 0.6em;
-      }
-    a span.the,
-    a span.of
-      {
-      font-size: 0.266em;
-      }
     a span.oc
       {
-      margin-top: -0.5em;
+      font-size: 1em; /* 36px */
       }
-  }
-header#large h1#site-title
-  {
     a span
       {
       font-size: 1em;
       }
-    a span.the,
+    a span.the
+      {
+      font-size: 0.388em; /* 14px */
+      }
     a span.of
       {
-      font-size: 0.444em;
+      font-size: 0.472em; /* 17 px */
       }
   }
-
+  
+/*
+  This reduces the size of the header and places it top left
+  for pages and posts.
+  
+  See Navitation section above for equivalent nav handling.
+  
+*/
+header.page
+  {
+  margin-bottom: 0;
+  }
+header.page h1#site-title
+  {
+  font-size: 1.5em;
+  width: 10em;
+  position: relative;
+  top: -4.5em;
+  margin-bottom: 0;
+  @media screen and (max-width: $screen-xs)
+    {
+    top: 0;
+    margin: 0 auto 1em auto;
+    }
+    a span.oc
+      {
+      font-size: 1em; /* 36px */
+      }
+    a span
+      {
+      font-size: 1em;
+      }
+    a span.the
+      {
+      font-size: 0.388em; /* 14px */
+      }
+    a span.of
+      {
+      font-size: 0.472em; /* 17 px */
+      }
+  }
 
 h1, h2, h3, h4, h5, h6
   {
@@ -232,6 +325,7 @@ h1, h2, h3, h4, h5, h6
 
 div#content
   {
+  font-family: $font-family-serif;
 	p, ul, ol, dl
 	  {
 		margin-bottom: 0.6em;
@@ -272,25 +366,32 @@ p.hero
   {
   font-size: 1.2em;
   line-height: 1.8em;
-  padding-left: 4.5em
+  padding-left: 4.5em;
+  font-family: $font-family-serif;
   }
 
 p.hero:first-line 
   {
-  font-weight: 800;
   text-indent: -4em;
   }
 
 p.hero:first-letter 
   {
+  font-style: normal;
   font-size: 6em;
   line-height: 1em;
   font-weight: 400;
   float: left;
   margin: -0.08em 0.08em 0 -0.08em;
+  font-family: $font-family-sans-serif;
+  @media screen and (max-width: $screen-xs)
+    {
+    
+    }
   }
 
-div.recent-posts
+div.recent-posts,
+div.post-archive
   {
   ul.posts
     {
@@ -312,3 +413,10 @@ div.recent-posts
         }   
     }
   }
+
+
+/*
+----------------------------------
+  Additional media queries
+
+*/

@@ -5722,22 +5722,28 @@ td.visible-print {
     display: none !important; } }
 /*
 ----------------------------------
-  Variables
+  Variables and fonts
 
   Custom variables follow, along with edits from _variables.scss  
 */
+@font-face {
+  font-family: 'Pecita';
+  src: url(../font/Pecita.otf) format("opentype");
+  font-style: normal; }
+
 /*
 ----------------------------------
   Page elements
   
 */
 body {
-  line-height: 1.6; }
+  line-height: 1.6;
+  font-family: "PT Sans", "Open Sans", Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif; }
 
 div#container {
   margin-left: -15px;
   margin-right: -15px;
-  margin: 0 auto;
+  margin: 3.5em auto 2em auto;
   text-align: center; }
   div#container:before, div#container:after {
     content: " ";
@@ -5752,8 +5758,9 @@ nav#main-large,
 header,
 div#content,
 footer {
+  font-size: 1.214em;
   margin: 0 auto;
-  padding-top: 4em;
+  padding-top: 2em;
   text-align: left;
   position: relative;
   min-height: 1px;
@@ -5776,6 +5783,7 @@ footer {
       margin-left: 16.66667%; } }
 
 footer {
+  margin-top: 3em;
   margin-bottom: 4em; }
 
 /*
@@ -5783,17 +5791,37 @@ footer {
   Navigation
   
 */
-nav#main ul,
-nav#main-large ul {
+nav#main.page ul {
+  text-align: right;
+  display: block;
+  float: right;
+  margin-bottom: 0; }
+  @media screen and (max-width: 767px) {
+    nav#main.page ul {
+      text-align: center;
+      float: none;
+      margin-bottom: 1em;
+      display: inline-block; } }
+  nav#main.page ul li:last-child {
+    display: inline;
+    padding-right: 0; }
+
+nav#main ul {
   list-style: none;
-  text-align: center; }
-  nav#main ul li,
-  nav#main-large ul li {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 0 3.4em; }
+  @media screen and (max-width: 480px) {
+    nav#main ul {
+      margin: 0 0 0 1.8em; } }
+  nav#main ul li {
     display: inline;
     padding-right: 3em; }
-    nav#main ul li a,
-    nav#main-large ul li a {
-      font-family: "Cardo", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+    @media screen and (max-width: 480px) {
+      nav#main ul li {
+        padding-right: 1em; } }
+    nav#main ul li a {
+      font-family: "Vollkorn", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
       font-style: italic;
       text-decoration: none;
       color: #36454f;
@@ -5802,9 +5830,7 @@ nav#main-large ul {
       border: 1px solid #f2f3f4;
       border-radius: 4px; }
     nav#main ul li a:hover,
-    nav#main ul li a:focus,
-    nav#main-large ul li a:hover,
-    nav#main-large ul li a:focus {
+    nav#main ul li a:focus {
       background-color: #2A2C39;
       border: 1px solid #2A2C39;
       color: white;
@@ -5826,12 +5852,26 @@ nav#contact {
     text-align: center; }
     nav#contact ul li {
       font-size: 1.5em;
-      display: inline;
-      margin-right: 1.5em; }
+      display: inline-block;
+      margin: 0.5em;
+      padding-right: 1em; }
     nav#contact ul a:hover span.contact,
     nav#contact ul a:focus span.contact {
       text-decoration: none; }
+    nav#contact ul li.github span.icon-github {
+      font-size: 0.9em; }
+    nav#contact ul li.twitter span.icon-twitter-sign {
+      font-size: 0.8em; }
+    nav#contact ul li.email span.icon-envelope {
+      font-size: 0.75em; }
 
+/*
+----------------------------------
+  Footer
+  
+  Possibly remove bootstrap pull-left/right and add responsive styling?
+
+*/
 /*
 ----------------------------------
   Icons
@@ -5865,52 +5905,85 @@ h1#site-title {
     text-decoration: none; }
   h1#site-title a span {
     display: block; }
-  h1#site-title a span.the,
-  h1#site-title a span.of {
-    font-family: 'Open Sans';
-    text-transform: uppercase; }
   h1#site-title a span.the {
+    font-family: 'PT Sans';
+    text-transform: uppercase;
     line-height: 1em;
-    padding: 0 0.8em;
     display: inline;
-    background-color: white; }
+    padding-bottom: 1em; }
+  h1#site-title a span.of {
+    font-style: italic;
+    padding-top: 0.5em;
+    margin-left: -0.117em;
+    /* 2px */ }
   h1#site-title a span.oc {
-    padding: 1em 0;
-    font-weight: 700;
-    font-size: 1.6em;
-    border-top: 1px solid #36454f;
-    margin-top: -0.4em; }
+    font-size: 1em;
+    line-height: 1.4; }
   h1#site-title a span.jmg {
-    padding-top: 1em; }
+    padding-top: 0.5em;
+    padding-left: 0.416em;
+    /* 15px */ }
 
-header#small h1#site-title a span {
-  font-size: 0.6em; }
-header#small h1#site-title a span.the,
-header#small h1#site-title a span.of {
-  font-size: 0.266em; }
-header#small h1#site-title a span.oc {
-  margin-top: -0.5em; }
-
-header#large h1#site-title a span {
+header.home h1#site-title a span.oc {
+  font-size: 1em;
+  /* 36px */ }
+header.home h1#site-title a span {
   font-size: 1em; }
-header#large h1#site-title a span.the,
-header#large h1#site-title a span.of {
-  font-size: 0.444em; }
+header.home h1#site-title a span.the {
+  font-size: 0.388em;
+  /* 14px */ }
+header.home h1#site-title a span.of {
+  font-size: 0.472em;
+  /* 17 px */ }
+
+/*
+  This reduces the size of the header and places it top left
+  for pages and posts.
+  
+  See Navitation section above for equivalent nav handling.
+  
+*/
+header.page {
+  margin-bottom: 0; }
+
+header.page h1#site-title {
+  font-size: 1.5em;
+  width: 10em;
+  position: relative;
+  top: -4.5em;
+  margin-bottom: 0; }
+  @media screen and (max-width: 480px) {
+    header.page h1#site-title {
+      top: 0;
+      margin: 0 auto 1em auto; } }
+  header.page h1#site-title a span.oc {
+    font-size: 1em;
+    /* 36px */ }
+  header.page h1#site-title a span {
+    font-size: 1em; }
+  header.page h1#site-title a span.the {
+    font-size: 0.388em;
+    /* 14px */ }
+  header.page h1#site-title a span.of {
+    font-size: 0.472em;
+    /* 17 px */ }
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1em;
-  font-family: "Cardo", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }
+  font-family: "Vollkorn", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }
 
-div#content p, div#content ul, div#content ol, div#content dl {
-  margin-bottom: 0.6em; }
-div#content p + p {
-  text-indent: 1em; }
-div#content dt {
-  margin-bottom: 0.6em; }
-div#content dd {
-  margin: 0 1em 0 2em; }
-div#content div.highlight {
-  margin: 1.6em 0; }
+div#content {
+  font-family: "Vollkorn", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }
+  div#content p, div#content ul, div#content ol, div#content dl {
+    margin-bottom: 0.6em; }
+  div#content p + p {
+    text-indent: 1em; }
+  div#content dt {
+    margin-bottom: 0.6em; }
+  div#content dd {
+    margin: 0 1em 0 2em; }
+  div#content div.highlight {
+    margin: 1.6em 0; }
 
 kbd {
   padding: 1px 2px;
@@ -5925,26 +5998,37 @@ span.post-date {
 p.hero {
   font-size: 1.2em;
   line-height: 1.8em;
-  padding-left: 4.5em; }
+  padding-left: 4.5em;
+  font-family: "Vollkorn", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }
 
 p.hero:first-line {
-  font-weight: 800;
   text-indent: -4em; }
 
 p.hero:first-letter {
+  font-style: normal;
   font-size: 6em;
   line-height: 1em;
   font-weight: 400;
   float: left;
-  margin: -0.08em 0.08em 0 -0.08em; }
+  margin: -0.08em 0.08em 0 -0.08em;
+  font-family: "PT Sans", "Open Sans", Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif; }
 
-div.recent-posts ul.posts {
+div.recent-posts ul.posts,
+div.post-archive ul.posts {
   margin: 0;
   padding: 0; }
-  div.recent-posts ul.posts li a {
+  div.recent-posts ul.posts li a,
+  div.post-archive ul.posts li a {
     padding-left: 0.5em; }
-  div.recent-posts ul.posts li span.date {
+  div.recent-posts ul.posts li span.date,
+  div.post-archive ul.posts li span.date {
     display: inline-block;
     width: 8em;
     text-align: right;
     padding-right: 0.5em; }
+
+/*
+----------------------------------
+  Additional media queries
+
+*/
