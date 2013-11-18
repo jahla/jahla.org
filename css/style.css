@@ -5860,7 +5860,7 @@ nav#contact {
       text-decoration: none; }
     nav#contact ul li.github span.icon-github {
       font-size: 0.9em; }
-    nav#contact ul li.twitter span.icon-twitter-sign {
+    nav#contact ul li.tweet span.icon-twitter-sign {
       font-size: 0.8em; }
     nav#contact ul li.email span.icon-envelope {
       font-size: 0.75em; }
@@ -5872,6 +5872,26 @@ nav#contact {
   Possibly remove bootstrap pull-left/right and add responsive styling?
 
 */
+footer {
+  text-align: center; }
+
+ul.footer {
+  padding-right: 2em; }
+  ul.footer li {
+    list-style: none;
+    display: inline-block;
+    margin: 0.5em; }
+
+li.footer-content,
+li.footer-content-name {
+  font-family: "Vollkorn", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }
+
+li.footer-content {
+  font-style: italic; }
+
+li.footer-controls {
+  margin-top: 1.5em; }
+
 /*
 ----------------------------------
   Icons
@@ -6027,8 +6047,23 @@ div.post-archive ul.posts {
     text-align: right;
     padding-right: 0.5em; }
 
+dl {
+  padding-bottom: 2em; }
+  dl dt {
+    padding-top: 1.5em; }
+
 /*
 ----------------------------------
   Additional media queries
 
 */
+/*
+----------------------------------  
+  Post specific elements
+
+*/
+iframe.youtube {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em 0; }

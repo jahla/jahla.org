@@ -21,12 +21,14 @@ I didn't want to have to put ugly shortcuts in my global scripts menu or switch 
 
 <dl>
 <dt>Kill current track</dt>
-<dd><p>Deletes current iTunes track from iTunes, file to trash. Plays next. *Use carefully; no confirmation dialogue*</p>
-<p>**Important edit** as of iTunes 11.1, this script no longer starts playing the next track in the playlist but takes you back to the first one. I will post the fixed version asap.</p></dd>
+<dd>Deletes current iTunes track from iTunes, file to trash. Plays next. *Use carefully; no confirmation dialogue.*</dd>
 
 
 {% highlight applescript %}
+global dbid -- stores current track's database id
 global addenda
+set dbid to ""
+set addenda to ""
 tell application "iTunes"
 	if player state is not stopped then
 		set ofi to fixed indexing
@@ -37,21 +39,21 @@ tell application "iTunes"
 			try
 				set floc to (get location of current track)
 			end try
+			next track
+			play
 			try
 				delete (some track of library playlist 1 whose database ID is dbid)
 			end try
-			set addenda to "Done. The track has been deleted."
+			set addenda to "Done. Track deleted."
 			if cla is file track then
-				set my addenda to "Done. The track has been deleted and its file has been moved to the Trash."
+				set my addenda to "Done. Track deleted, file Trashed."
 				my delete_the_file(floc)
 			end if
 		on error
-			set addenda to "The track could not be deleted."
+			set addenda to "Track could not be deleted."
 		end try
 		set fixed indexing to ofi
 	end if
-	next track
-	play
 end tell
 to delete_the_file(floc)
 	try
@@ -64,7 +66,7 @@ end delete_the_file
 {% endhighlight %}
 
 <dt>Playback position</dt>
-<dd>Applescript to skip forwards and backwards in currently playing iTunes track. In this example, the script tells iTunes to skip back 20 seconds</dd>
+<dd>Applescript to skip forwards and backwards in currently playing iTunes track. In this example, the script tells iTunes to skip back 20 seconds.</dd>
 
 {% highlight applescript %}
 tell application "iTunes"

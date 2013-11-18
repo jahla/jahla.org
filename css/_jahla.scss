@@ -160,7 +160,7 @@ nav#contact
           {
           font-size: 0.9em;
           }
-        li.twitter span.icon-twitter-sign
+        li.tweet span.icon-twitter-sign
           {
           font-size: 0.8em;
           }
@@ -180,6 +180,37 @@ nav#contact
 
 */
 
+footer
+  {
+  text-align: center; 
+  }
+
+ul.footer
+  {
+  padding-right: 2em;
+    li
+      {
+      list-style: none;
+      display: inline-block;
+      margin: 0.5em;
+      }
+  }
+
+li.footer-content, 
+li.footer-content-name
+  {
+  font-family: $font-family-serif;
+  }
+
+li.footer-content
+  {
+  font-style: italic;
+  }
+
+li.footer-controls
+  {
+  margin-top: 1.5em;
+  }
 
 
 /*
@@ -414,9 +445,33 @@ div.post-archive
     }
   }
 
+dl
+  {
+  padding-bottom: 2em;
+    dt 
+      {
+      padding-top: 1.5em;
+      }
+  }
+
 
 /*
 ----------------------------------
   Additional media queries
 
 */
+
+/*
+----------------------------------  
+  Post specific elements
+
+*/
+
+iframe.youtube 
+  {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em 0;
+  }
+
