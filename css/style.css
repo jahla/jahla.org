@@ -5911,6 +5911,10 @@ img.profile-pic {
   float: right;
   margin: 0 0 2em 2em; }
 
+img.img-post {
+  margin: 2em 0;
+  max-width: 100%; }
+
 /*
 ----------------------------------
   Typography

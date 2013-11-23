@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Latest creation: my Little Black Dress"
+title:  "Latest creation: Little Black Dress"
 date:   2013-09-21 20:57:52
 categories:
 ---
@@ -8,6 +8,7 @@ categories:
 This week I made a dress. 
 
 Recently I've been feeling like I need more versatile clothes — and when it comes to versatile attire, the LBD is definitely up there. But, as per usual, shops just don't tend to stock anything that fits quite right. 
+<span class="image"><img src="/img/lbd-bw.png" class="img-post img-rounded"></span>
 
 ### The aim
 
