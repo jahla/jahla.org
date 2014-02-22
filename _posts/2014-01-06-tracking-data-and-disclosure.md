@@ -5,6 +5,10 @@ date:   2014-01-06 00:17:35
 categories:
 ---
 
+This post has a follow-up post, which I wrote after I was contacted by a representative from Evidon's PR firm. [Check out Part II here](../../02/20/ghostery-and-evidon-part-ii.html).
+
+---
+
 A couple of weeks ago I came across an [article](http://www.technologyreview.com/news/516156/a-popular-ad-blocker-also-helps-the-ad-industry/) that mentioned something about the popular privacy extension [Ghostery](https://www.ghostery.com) which surprised me. Ghostery is owned by [Evidon](http://www.evidon.com/), a marketing intelligence and privacy company.
 
 Ghostery is the most comprehensive privacy and anti-tracking extension available right now, and I have been using it for about two years — which is why this article caught me a little off guard. You may argue that I should not have been so astonished: the extension is free, and there is obviously a lot of work going in to it to make it as comprehensive as it is. But my reaction was not entirely unrepresentative of Ghostery users, and indeed I've observed similar initial suspicions arise in at least three people upon reading similar articles.
