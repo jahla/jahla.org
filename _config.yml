@@ -8,5 +8,5 @@ rdiscount:
     - smart         # typographic substitutions with SmartyPants
 pygments: true
 paginate: 3
-exclude: ["Gemfile", "Gemfile.lock", "README.md", 'sass', 'watch.sh', 'style.scss', 'bootstrap.scss'] # files to exclude
+exclude: ["Gemfile", "Gemfile.lock", "README.md", 'sass', 'watch.sh', 'style.scss', 'bootstrap.scss', 'node_modules', 'tasks'] # files to exclude
 
