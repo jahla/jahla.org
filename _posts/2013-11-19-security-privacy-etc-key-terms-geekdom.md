@@ -48,7 +48,8 @@ There are some intersections between privacy and security, such as notions of ap
 
 <dl>
 <dt>Best practice security</dt> 
-<dd>Obsolete. Bureaucrats using have had time to expound and cogitate, and while they did so, the world moved on. Worth noting that they probably used IE6 while doing this.</dd>
+<dd>(1) <em>As it generally applies.</em> Obsolete. Bureaucrats using have had time to expound and cogitate, and while they did so, the world moved on. Worth noting that they probably used IE6 while doing this.</dd>
+<dd>(2) Infinitely better than the general alternative, which is none.</dd>
 
 <dt>Cyber</dt> 
 <dd>A word that sounds cool. Meaning unclear.</dd>
