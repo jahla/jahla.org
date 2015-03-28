@@ -21,6 +21,6 @@ Lime Crime is a brand known by geeks of makeup, goths, vegans and general makeup
 
 And then there was uproar and bad press. Sure, other factors purportedly contribute, but the security breach was the catalyst, and influential bloggers and articles are turning against the brand. To the extent that makeup aficionados are calling it the ‘Lime Crime scandal'.
 
-The backstory to this deserves mention. There has been controversy surrounding the brand for a number of years, and the Tumblr [Lime Crime Uncensored](http://limecrimeuncensored.tumblr.com/) was started back in 2013 as "a response to the aggressive and thorough purging Lime Crime engage in to keep any issues regarding their company from being discussed on the Internet." 
+The backstory to this deserves mention. There has been controversy surrounding the brand for a number of years, and the Tumblr [Lime Crime Uncensored](http://limecrimeuncensored.tumblr.com/) was started back in 2013 as "a response to the aggressive and thorough purging Lime Crime engage in to keep any issues regarding their company from being discussed on the Internet." This is just one of the anti-Lime Crime blogs around, it seems.
 
 Still, it was this security breach that brought the company to wider attention. Does this mean that the security of customer data is really becoming important for mainstream retailers? I would very much like to think so.
